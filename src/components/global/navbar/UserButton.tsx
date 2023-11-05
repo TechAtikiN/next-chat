@@ -1,22 +1,37 @@
+'use client'
+
 // named imports
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../../ui/dropdown-menu"
+import { Session } from 'next-auth'
+import { signIn, signOut } from 'next-auth/react'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger
+} from '../../ui/dropdown-menu'
+import { Button } from '@/components/ui/button'
 
 // default imports
-import UserAvatar from "./UserAvatar"
+import UserAvatar from './UserAvatar'
 
-function UserButton() {
-  return (
+function UserButton({ session }: { session: Session | null }) {
+  if (!session) return (
+    <Button variant={'outline'} onClick={() => signIn()}>
+      Sign in
+    </Button>
+  )
+
+  return session && (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <UserAvatar image="https:github.com/shadcn.png" name="Nikita Khabya" />
+        <UserAvatar image={session.user?.image} name={session.user?.name} />
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>Profile</DropdownMenuItem>
-        <DropdownMenuItem>Billing</DropdownMenuItem>
-        <DropdownMenuItem>Team</DropdownMenuItem>
-        <DropdownMenuItem>Subscription</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => signOut()}>Sign out</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
 

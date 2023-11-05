@@ -4,10 +4,11 @@ import './globals.css'
 // named imports
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { ThemeProvider } from '@/components/providers/ThemeProvider'
 
 // default imports
 import Header from '@/components/global/navbar/Header'
-import { ThemeProvider } from '@/components/providers/ThemeProvider'
+import ClientProviders from '@/components/providers/ClientProviders'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,20 +23,22 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang='en'>
-      <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+    <ClientProviders>
+      <html lang='en'>
+        <body className={inter.className}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
 
-          <Header />
+            <Header />
 
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClientProviders>
   )
 }
