@@ -40,10 +40,10 @@ const tiers = [
 function PricingCards({ redirect }: { redirect: boolean }) {
   return (
     <div
-      className='sm:mx-auto my-10 grid grid-cols-1 sm:gap-10 lg:grid-cols-2 mt-20'>
+      className='grid grid-cols-1 sm:grid-cols-2 gap-x-0 sm:gap-x-10 gap-y-10 my-20'>
       {tiers.map((tier) => (
         <div
-          className='text-black dark:bg-slate-900 dark:text-white dark:hover:bg-slate-900/70
+          className='ml-7 sm:ml-0 text-black dark:bg-slate-900 dark:text-white dark:hover:bg-slate-900/70
              border-2 border-gray-300 dark:border-gray-700 dark:hover:border-indigo-400 hover:border-indigo-400 flex flex-col py-5 px-8 rounded-3xl w-80'
           key={tier.name}
         >

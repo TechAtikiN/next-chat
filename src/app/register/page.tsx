@@ -1,6 +1,8 @@
 // named imports
-import PricingCards from '@/components/pricing/PricingCards'
 import { getServerSession } from 'next-auth'
+
+// default imports
+import PricingCards from '@/components/pricing/PricingCards'
 
 async function Register() {
   const session = await getServerSession()
