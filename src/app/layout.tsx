@@ -25,14 +25,13 @@ export default function RootLayout({
   return (
     <ClientProviders>
       <html lang='en'>
-        <body className={inter.className}>
+        <body className='flex flex-col min-h-screen'>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-
             <Header />
 
             {children}

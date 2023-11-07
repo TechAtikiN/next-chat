@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+      @apply border-border;
+    }
+  
+    body {
+      @apply bg-background text-foreground;
+    }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
@@ -66,12 +74,8 @@
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
+@layer components {
+  .pricing-btn {
+    @apply bg-indigo-500 w-full hover:bg-indigo-400 text-center text-white py-2 px-4 my-3 rounded-md
   }
 }

@@ -2,7 +2,7 @@
 import { getServerSession } from 'next-auth'
 import { authOptions } from '../../../../auth'
 import { DarkModeToggle } from './DarkModeToggle'
-import { MessageSquareDashedIcon, MessageSquareIcon, MessagesSquareIcon } from 'lucide-react'
+import { MessagesSquareIcon } from 'lucide-react'
 
 // default imports
 import Logo from './Logo'
@@ -16,7 +16,7 @@ async function Header() {
   return (
     <header className='sticky top-0 z-50 bg-white dark:bg-slate-900'>
       <nav
-        className='flex flex-col sm:flex-row items-center p-5 pl-2 bg-white dark:bg-slate-900 max-w-7xl mx-auto'
+        className='flex flex-col sm:flex-row items-center p-4 pl-2 bg-white dark:bg-slate-900 max-w-7xl mx-auto'
       >
         <Logo />
 
