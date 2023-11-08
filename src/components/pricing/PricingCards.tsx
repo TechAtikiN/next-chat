@@ -7,32 +7,32 @@ import CheckoutButton from './CheckoutButton'
 
 const tiers = [
   {
-    name: 'Starter',
+    name: "Starter",
     id: null,
-    href: '#',
+    href: "#",
     priceMonthly: null,
-    description: 'Get chatting with our free plan and explore',
+    description: "Get chatting with our free plan and explore",
     features: [
-      '20 Message Chat limit in Chats',
-      '2 Participants per Chat',
-      '3 Chat Rooms limit',
-      'Supports 2 languages',
-      '48-hour support response time'
+      "20 Message Chat limit in Chats",
+      "2 Participants per Chat",
+      "3 Chat Rooms limit",
+      "Supports 2 languages",
+      "48-hour support response time"
     ]
   },
   {
-    name: 'Pro',
-    id: 'abc',
-    href: '#',
-    priceMonthly: '$15.99',
-    description: 'Unlock unlimited features with our Pro plan.',
+    name: "Pro",
+    id: "pro",
+    href: "#",
+    priceMonthly: "$10.00",
+    description: "Unlock unlimited features with our Pro plan.",
     features: [
-      'Unlimited Messages in Chats',
-      'Unlimited Participants per Chat',
-      'Unlimited Chat Rooms',
-      'Supports upto 10 languages',
-      '24-hour support response time',
-      'Early access to new features'
+      "Unlimited Messages in Chats",
+      "Unlimited Participants per Chat",
+      "Unlimited Chat Rooms",
+      "Supports upto 10 languages",
+      "24-hour support response time",
+      "Early access to new features"
     ]
   },
 ]
