@@ -1,6 +1,13 @@
-import { DocumentData, FirestoreDataConverter, QueryDocumentSnapshot } from "firebase-admin/firestore";
-import { Subscription } from "../types/Subscription";
-import { SnapshotOptions } from "firebase/firestore";
+// named imports
+import {
+  DocumentData,
+  FirestoreDataConverter,
+  QueryDocumentSnapshot,
+  SnapshotOptions,
+  collection
+} from 'firebase/firestore'
+import { Subscription } from '../types/Subscription'
+import { db } from '../../firebase'
 
 const subscriptionConverter: FirestoreDataConverter<Subscription> = {
   toFirestore: function (subscription: Subscription): DocumentData {
@@ -27,7 +34,20 @@ const subscriptionConverter: FirestoreDataConverter<Subscription> = {
       prices: data.prices,
       product: data.product,
       quantity: data.quantity,
+      status: data.status,
+      stripeLink: data.stripeLink,
+      cancel_at: data.cancel_at,
+      canceled_at: data.canceled_at,
+      cuurent_period_end: data.cuurent_period_end,
+      ended_at: data.ended_at,
+      trial_end: data.trial_end,
+      trial_start: data.trial_start,
+      role: data.role
     }
 
+    return sub
   }
 }
+
+export const subscriptionRef = (userId: string) => collection(db, 'customers', userId, 'subscriptions')
+.withConverter(subscriptionConverter)

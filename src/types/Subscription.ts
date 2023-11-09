@@ -28,6 +28,8 @@ export interface Subscription {
   created: Timestamp
   current_period_start: Timestamp
   cuurent_period_end: Timestamp
+  cancel_at: Timestamp | null
+  ended_at: Timestamp | null
   canceled_at: Timestamp | null
   trial_start: Timestamp | null
   trial_end: Timestamp | null
