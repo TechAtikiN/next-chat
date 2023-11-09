@@ -15,8 +15,13 @@ import { Button } from '@/components/ui/button'
 
 // default imports
 import UserAvatar from './UserAvatar'
+import { useSubscriptionStore } from '@/store/store'
+import LoadingSpinner from '../LoadingSpinner'
+import { StarIcon } from 'lucide-react'
 
 function UserButton({ session }: { session: Session | null }) {
+  const subscription = useSubscriptionStore((state) => state.subscription)
+
   if (!session) return (
     <Button variant={'outline'} onClick={() => signIn()}>
       Sign in
@@ -29,9 +34,31 @@ function UserButton({ session }: { session: Session | null }) {
         <UserAvatar image={session.user?.image} name={session.user?.name} />
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+        <DropdownMenuLabel>{session?.user?.name}</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={() => signOut()}>Sign out</DropdownMenuItem>
+
+        {subscription === undefined && (
+          <DropdownMenuItem onClick={() => signOut()}>
+            <LoadingSpinner />
+          </DropdownMenuItem>
+        )}
+
+        {subscription?.role === 'pro' && (
+          <>
+            <DropdownMenuLabel className='text-sm flex items-center justify-center space-x-1 text-pink-700 animate-pulse'>
+              <StarIcon fill='#E953C1' />
+              <p>PRO</p>
+            </DropdownMenuLabel>
+
+            <DropdownMenuSeparator />
+
+            <DropdownMenuItem>
+              Manage
+            </DropdownMenuItem>
+          </>
+        )}
+
+        <DropdownMenuItem className='' onClick={() => signOut()}>Sign out</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
 

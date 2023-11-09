@@ -37,7 +37,12 @@ const tiers = [
   },
 ]
 
-function PricingCards({ redirect }: { redirect: boolean }) {
+interface Props {
+  redirect: boolean
+  userId: string | undefined
+}
+
+function PricingCards({ redirect, userId }: Props) {
   return (
     <div
       className='grid grid-cols-1 sm:grid-cols-2 gap-x-0 sm:gap-x-10 gap-y-10 my-20'>
@@ -79,7 +84,7 @@ function PricingCards({ redirect }: { redirect: boolean }) {
               Get started today
             </Link>
           ) : (
-            tier.id && <CheckoutButton />
+            tier.id && <CheckoutButton userId={userId} />
           )}
 
         </div>
