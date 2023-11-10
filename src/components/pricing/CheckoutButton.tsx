@@ -16,6 +16,7 @@ function CheckoutButton({ userId }: { userId: string | undefined }) {
   const subscription = useSubscriptionStore((state) => state.subscription)
   const { data: session } = useSession()
 
+  console.log(session)
   const isLoadingSubscription = subscription === undefined
 
   const isSubscribed = subscription?.status === 'active' && subscription?.role === 'pro'
@@ -53,24 +54,34 @@ function CheckoutButton({ userId }: { userId: string | undefined }) {
         window.location.assign(url)
         setLoading(false)
       }
-
     })
-
-    // redirect user to checkout page
   }
 
   return (
-    <div
-      className='pricing-btn font-semibold'
-    >
-      {isSubscribed ? (
-        <ManageAccountButton userId={userId} />
-      ) :
-        isLoadingSubscription || loading ?
-          (<LoadingSpinner />)
-          : (
-            <button onClick={() => createCheckoutSession()}>Sign Up</button>
-          )}
+    <div className='flex flex-col space-y-2'>
+
+      {isSubscribed && (
+        <>
+          <hr className='mt-5' />
+          <p className='p-5 text-center text-sm text-indigo-500'>You are subscribed to PRO</p>
+        </>
+      )}
+
+      <div
+        className='pricing-btn font-semibold'
+      >
+        {isSubscribed ? (
+          <ManageAccountButton userId={userId} />
+        ) :
+          session === null ? (
+            <p>Please Login</p>
+          ) :
+            isLoadingSubscription || loading ?
+              (<LoadingSpinner />)
+              : (
+                <button onClick={() => createCheckoutSession()}>Sign Up</button>
+              )}
+      </div>
     </div>
   )
 }

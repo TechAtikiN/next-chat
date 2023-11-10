@@ -10,9 +10,8 @@ interface Props {
 
 function ChatsPage({ searchParams: { error } }: Props) {
   return (
-    <div>
+    <div className='py-3'>
       {/* Chat permission */}
-      <h1>chats</h1>
 
       {/* Chat list */}
       <ChatList />
