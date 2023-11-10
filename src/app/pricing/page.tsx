@@ -8,7 +8,6 @@ function Pricing({ redirect, userId }: {
 
   return (
     <div className='my-20 mx-auto'>
-
       {/* description  */}
       <div className='dark:text-white'>
         <h3 className='text-center text-indigo-400 font-semibold'>Pricing</h3>

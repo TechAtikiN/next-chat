@@ -3,12 +3,10 @@
 // mamed imports
 import { adminDb } from '../../firebase-admin'
 import { headers } from "next/headers"
-import { getServerSession } from "next-auth"
 import { redirect } from "next/navigation"
 
 // default imports
 import Stripe from "stripe"
-import { authOptions } from '../../auth'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: "2023-10-16",
@@ -41,8 +39,6 @@ const generatePortalLink = async (userId: string| undefined ) => {
 
   redirect(stripeSession.url)
   }
-
-  
 }
 
 export default generatePortalLink

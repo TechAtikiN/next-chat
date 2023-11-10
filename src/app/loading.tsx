@@ -1,4 +1,4 @@
-// named imports
+// default imports
 import LoadingSpinner from '@/components/global/LoadingSpinner'
 
 function Loading() {

@@ -4,6 +4,8 @@ import { ChatMembers, chatMembersCollectionGroupRef } from '@/converters/ChatMem
 import { MessageSquare } from 'lucide-react'
 import { useSession } from 'next-auth/react'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
+
+// default imports
 import CreateChatButton from '../global/navbar/CreateChatButton'
 import ChatListRow from './ChatListRow'
 
@@ -27,7 +29,6 @@ function ChatListRows({ initialChats }: { initialChats: ChatMembers[] }) {
       </div>
     )
   }
-
 
   return (
     <div>

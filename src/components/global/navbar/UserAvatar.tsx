@@ -1,7 +1,9 @@
 // named imports
-import { cn } from "@/lib/utils"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import Image from "next/image"
+import { cn } from '@/lib/utils'
+import { Avatar, AvatarFallback } from '@/components/ui/avatar'
+
+// default imports
+import Image from 'next/image'
 
 function UserAvatar({
   name,
@@ -13,23 +15,23 @@ function UserAvatar({
   className?: string
 }) {
   return (
-    <Avatar className={cn("bg-white text-black", className)}>
+    <Avatar className={cn('bg-white text-black', className)}>
       {image && (
         <Image
           src={image}
-          alt={name || "User name"}
+          alt={name || 'User name'}
           width={40}
           height={40}
-          className="rounded-full"
+          className='rounded-full'
         />
       )}
       <AvatarFallback
         delayMs={1000}
         className='dark:bg-white dark:text-black text-lg'>
         {name
-          ?.split(" ")
+          ?.split(' ')
           .map((n) => n[0])
-          .join("")}
+          .join('')}
       </AvatarFallback>
     </Avatar>
   )

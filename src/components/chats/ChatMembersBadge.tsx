@@ -2,11 +2,11 @@
 // named imports
 import { ChatMembers, chatMembersRef } from '@/converters/ChatMembers'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
+import { Badge } from '../ui/badge'
 
 // default imports
 import useAdminId from '@/hooks/useAdminId'
 import LoadingSpinner from '../global/LoadingSpinner'
-import { Badge } from '../ui/badge'
 import UserAvatar from '../global/navbar/UserAvatar'
 
 function ChatMembersBadge({ chatId }: { chatId: string }) {
@@ -27,7 +27,6 @@ function ChatMembersBadge({ chatId }: { chatId: string }) {
               key={member.email}
               variant='secondary'
               className='h-14 p-5 pl-2 pr-5 flex space-x-2'
-
             >
               <div className='flex items-center space-x-2'>
                 <UserAvatar name={member.email} image={member.image} />

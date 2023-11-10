@@ -1,8 +1,9 @@
 'use client'
 
-import { Button } from "@/components/ui/button"
-import { useSubscriptionStore } from "@/store/store"
-import { useRouter } from "next/navigation"
+// named imports
+import { Button } from '@/components/ui/button'
+import { useSubscriptionStore } from '@/store/store'
+import { useRouter } from 'next/navigation'
 
 function UpgradeBanner() {
   const router = useRouter()

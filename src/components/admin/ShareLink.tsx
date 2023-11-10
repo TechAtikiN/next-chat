@@ -1,11 +1,20 @@
-import { Dispatch, SetStateAction } from "react"
-import { useToast } from "../ui/use-toast"
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog"
-import { Button } from "../ui/button"
-import { Copy } from "lucide-react"
-import { Label } from "../ui/label"
-import { Input } from "../ui/input"
-import { DialogClose } from "@radix-ui/react-dialog"
+// named imports
+import { Dispatch, SetStateAction } from 'react'
+import { useToast } from '../ui/use-toast'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from '../ui/dialog'
+import { Button } from '../ui/button'
+import { Copy } from 'lucide-react'
+import { Label } from '../ui/label'
+import { Input } from '../ui/input'
+import { DialogClose } from '@radix-ui/react-dialog'
 
 function ShareLink({
   isOpen,
@@ -59,18 +68,18 @@ function ShareLink({
           </DialogDescription>
         </DialogHeader>
 
-        <div className="flex items-center space-x-2">
-          <div className="grid flex-1 gap-2">
-            <Label htmlFor="link" className="sr-only">Link</Label>
+        <div className='flex items-center space-x-2'>
+          <div className='grid flex-1 gap-2'>
+            <Label htmlFor='link' className='sr-only'>Link</Label>
             <Input id='link' defaultValue={linkToChat} readOnly />
           </div>
-          <Button type="submit" onClick={() => copyToClipboard()} size='sm' className="px-3">
-            <span className="sr-only">Copy</span>
-            <Copy className="h-4 w-4" />
+          <Button type='submit' onClick={() => copyToClipboard()} size='sm' className='px-3'>
+            <span className='sr-only'>Copy</span>
+            <Copy className='h-4 w-4' />
           </Button>
         </div>
 
-        <DialogFooter className="sm:justify-start">
+        <DialogFooter className='sm:justify-start'>
           <DialogClose asChild>
             <Button type='button' variant='secondary'>Close</Button>
           </DialogClose>

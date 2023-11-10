@@ -1,5 +1,6 @@
 'use client'
 
+// named imports
 import {
   Select,
   SelectContent,
@@ -9,7 +10,6 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/components/ui/select'
-// named imports
 import {
   LanguagesSupportedMap,
   LanguageSupported,
@@ -17,8 +17,9 @@ import {
   useSubscriptionStore
 } from '@/store/store'
 import { usePathname } from 'next/navigation'
+
+// default imports
 import LoadingSpinner from '../LoadingSpinner'
-import { get } from 'http'
 import Link from 'next/link'
 
 function LanguageSelect() {

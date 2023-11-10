@@ -75,7 +75,6 @@ function ChatInput({ chatId }: { chatId: string }) {
       timestamp: serverTimestamp(),
       user: userToStore
     })
-
   }
 
   return (

@@ -7,6 +7,8 @@ import { MessageCircleIcon } from 'lucide-react'
 import { Session } from 'next-auth'
 import { createRef, useEffect } from 'react'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
+
+// default imports
 import LoadingSpinner from '../global/LoadingSpinner'
 import UserAvatar from '../global/navbar/UserAvatar'
 

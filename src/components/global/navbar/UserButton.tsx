@@ -12,12 +12,12 @@ import {
   DropdownMenuTrigger
 } from '../../ui/dropdown-menu'
 import { Button } from '@/components/ui/button'
+import { useSubscriptionStore } from '@/store/store'
+import { StarIcon } from 'lucide-react'
 
 // default imports
-import UserAvatar from './UserAvatar'
-import { useSubscriptionStore } from '@/store/store'
 import LoadingSpinner from '../LoadingSpinner'
-import { StarIcon } from 'lucide-react'
+import UserAvatar from './UserAvatar'
 
 function UserButton({ session }: { session: Session | null }) {
   const subscription = useSubscriptionStore((state) => state.subscription)
@@ -61,7 +61,6 @@ function UserButton({ session }: { session: Session | null }) {
         <DropdownMenuItem className='' onClick={() => signOut()}>Sign out</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-
   )
 }
 

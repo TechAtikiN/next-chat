@@ -1,3 +1,4 @@
+// named imports
 import { NextResponse } from "next/server";
 import { adminDb } from "../../../../../firebase-admin";
 

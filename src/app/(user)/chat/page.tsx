@@ -1,4 +1,4 @@
-// named imports
+// defualt imports
 import ChatList from '@/components/chats/ChatList'
 import ChatPermissionError from '@/components/chats/ChatPermissionError'
 

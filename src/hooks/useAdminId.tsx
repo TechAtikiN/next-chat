@@ -1,6 +1,6 @@
+import { useEffect, useState } from 'react'
 import { chatMemberAdminRef } from '@/converters/ChatMembers'
 import { getDocs } from 'firebase/firestore'
-import { useEffect, useState } from 'react'
 
 function useAdminId({ chatId }: { chatId: string }) {
   const [adminId, setAdminId] = useState<string>('')

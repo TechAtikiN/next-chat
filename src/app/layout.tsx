@@ -5,13 +5,13 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
+import { Toaster } from '@/components/ui/toaster'
 
 // default imports
 import Header from '@/components/global/navbar/Header'
 import ClientProviders from '@/components/providers/ClientProviders'
 import FirebaseAuthProvider from '@/components/providers/FirebaseAuthProvider'
 import SubscriptionProvider from '@/components/providers/SubscriptionProvider'
-import { Toaster } from '@/components/ui/toaster'
 
 const inter = Inter({ subsets: ['latin'] })
 
