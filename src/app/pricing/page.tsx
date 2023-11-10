@@ -1,10 +1,10 @@
 // default imports
 import PricingCards from '@/components/pricing/PricingCards'
+import { getServerSession } from 'next-auth'
+import { authOptions } from '../../../auth'
 
-function Pricing({ redirect, userId }: {
-  redirect: boolean | undefined,
-  userId: string
-}) {
+async function Pricing() {
+  const session = await getServerSession(authOptions)
 
   return (
     <div className='my-20 mx-auto'>
@@ -16,7 +16,7 @@ function Pricing({ redirect, userId }: {
       </div>
 
       {/* pricing cards */}
-      <PricingCards userId={userId} redirect={true} />
+      <PricingCards userId={session?.user.id} redirect={true} />
     </div>
   )
 }
