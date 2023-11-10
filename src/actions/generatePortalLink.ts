@@ -16,7 +16,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 
 const generatePortalLink = async (userId: string| undefined ) => {
   const host = headers().get("host")
-  console.log(userId)
+
   // if (userId) return console.error("No user id found")
   const returnUrl = 
     process.env.NODE_ENV === "development" ?
@@ -26,7 +26,6 @@ const generatePortalLink = async (userId: string| undefined ) => {
   // get the customer record from firestore
   if (userId) {
     const doc = await adminDb.collection("customers").doc(userId as string).get()
-    console.log(doc)
 
     // if no customer record found, return error
   if (!doc.data) return console.error("No customer record found for user", userId)
