@@ -16,11 +16,19 @@ import { addChatRef, chatMembersRef } from '@/converters/ChatMembers'
 import { getDocs, serverTimestamp, setDoc } from 'firebase/firestore'
 import { ToastAction } from '../ui/toast'
 import { getUserByEmailRef } from '@/converters/User'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from '../ui/dialog'
 
 // default imports
 import * as z from 'zod'
 import useAdminId from '@/hooks/useAdminId'
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog'
+import ShareLink from './ShareLink'
 
 const formSchema = z.object({
   email: z.string().email('Please enter a valid email address'),
@@ -163,11 +171,11 @@ function InviteUser({ chatId }: { chatId: string }) {
           </DialogContent>
         </Dialog>
 
-        {/* <ShareLink
+        <ShareLink
           isOpen={openInviteLink}
           setIsOpen={setOpenInviteLink}
           chatId={chatId}
-        /> */}
+        />
       </>
     )
   )
