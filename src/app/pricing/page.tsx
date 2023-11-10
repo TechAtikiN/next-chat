@@ -1,8 +1,9 @@
 // default imports
 import PricingCards from '@/components/pricing/PricingCards'
 
-function Pricing({ redirect }: {
-  redirect: boolean
+function Pricing({ redirect, userId }: {
+  redirect: boolean,
+  userId?: string
 }) {
 
   return (
@@ -16,7 +17,7 @@ function Pricing({ redirect }: {
       </div>
 
       {/* pricing cards */}
-      <PricingCards redirect={true} />
+      <PricingCards userId={userId} redirect={true} />
     </div>
   )
 }
