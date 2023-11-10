@@ -2,8 +2,8 @@
 import PricingCards from '@/components/pricing/PricingCards'
 
 function Pricing({ redirect, userId }: {
-  redirect: boolean,
-  userId?: string
+  redirect: boolean | undefined,
+  userId: string
 }) {
 
   return (
