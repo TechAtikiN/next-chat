@@ -3,6 +3,8 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '../../../../../auth'
 import { sortedMessagesRef } from '@/converters/Message'
 import { getDocs } from 'firebase/firestore'
+import { redirect } from 'next/navigation'
+import { chatMembersRef } from '@/converters/ChatMembers'
 
 // default imports
 import ChatInput from '@/components/chats/ChatInput'
@@ -21,6 +23,11 @@ async function ChatPage({ params: { chatId } }: Props) {
   const initialMessages = (await getDocs(sortedMessagesRef(chatId))).docs.map(
     (doc) => doc.data()
   )
+
+  const hasAccess = (await getDocs(chatMembersRef(chatId))).docs
+    .map((doc) => doc.id).includes(session?.user?.id!)
+
+  if (!hasAccess) redirect('/chat?error=permission')
 
   return (
     <>

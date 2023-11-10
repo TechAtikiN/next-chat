@@ -63,7 +63,7 @@ function ChatMessages({
                   : 'bg-gray-100 dark:text-gray-100 dark:bg-slate-700 rounded-bl-none'
                 }`}
             >
-              <p className={`text-xs  italic font-extralight line-clamp-1
+              <p className={`text-xs italic font-extralight line-clamp-1
                 ${isSender ? 'text-right' : 'text-left'}
               `}
               >
@@ -79,7 +79,7 @@ function ChatMessages({
             <UserAvatar
               name={message.user.name}
               image={message.user.image}
-            // className={`${isSender && '-order-1'}`}
+              className={`${!isSender && '-order-1'}`}
             />
           </div>
         )
