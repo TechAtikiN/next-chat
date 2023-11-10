@@ -8,6 +8,7 @@ import { getDocs } from 'firebase/firestore'
 import ChatInput from '@/components/chats/ChatInput'
 import ChatMessages from '@/components/chats/ChatMessages'
 import ChatMembersBadge from '@/components/chats/ChatMembersBadge'
+import AdminControls from '@/components/admin/AdminControls'
 
 interface Props {
   params: {
@@ -24,6 +25,7 @@ async function ChatPage({ params: { chatId } }: Props) {
   return (
     <>
       {/* Admin controls */}
+      <AdminControls chatId={chatId} />
 
       {/* Chat members badge  */}
       <ChatMembersBadge chatId={chatId} />

@@ -5,11 +5,11 @@ import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import { Message, limitedSortedMessagesRef } from '@/converters/Message'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
+import { useLanguageStore } from '@/store/store'
 import { Skeleton } from '../ui/skeleton'
 
 // default imports
 import UserAvatar from '../global/navbar/UserAvatar'
-import { useLanguageStore } from '@/store/store'
 
 function ChatListRow({ chatId }: { chatId: string }) {
   const router = useRouter()

@@ -49,7 +49,7 @@ function CreateChatButton({ isLarge }: { isLarge?: boolean }) {
           title: 'Success!',
           description: 'Your new chat has been created!',
           duration: 3000,
-          className: 'bg-green-500 text-white'
+          className: 'bg-green-600 text-white'
         })
         router.push(`/chat/${chatId}`)
       })
