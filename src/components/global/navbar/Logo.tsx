@@ -1,5 +1,5 @@
 // default imports
-import LogoImage from '@logos/logo.png'
+import LogoImage from '@assets/logos/logo.png'
 import Link from 'next/link'
 import Image from 'next/image'
 

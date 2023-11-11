@@ -78,4 +78,12 @@
   .pricing-btn {
     @apply bg-indigo-500 w-full hover:bg-indigo-400 text-center text-white py-2 px-4 my-3 rounded-md
   }
+
+  .home-btn {
+    @apply px-5 py-2 text-sm rounded-full duration-150 border border-slate-600 font-semibold hover:bg-slate-900 w-40 text-center
+  }
+  
+  .glass-style {
+    @apply bg-slate-800 rounded-l-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 dark:bg-opacity-30 dark:hover:bg-opacity-20 hover:bg-opacity-5 border-l border-y border-slate-400 dark:border-slate-700
+  }
 }
